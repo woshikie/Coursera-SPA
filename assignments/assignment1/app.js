@@ -6,16 +6,16 @@
   function LunchCheckController($scope){
     $scope.dishes = "";
     $scope.message = "";
-    $scope.objColor = "transparent";
+    $scope.msgClass = "";
     $scope.check = function(){
       var NumOfDishes = CountDishes($scope.dishes);
       if (NumOfDishes == 0){
         $scope.message = "Please enter data first";
-        $scope.objColor = "red";
+        $scope.msgClass = "alert alert-danger";
       }else{
         if (NumOfDishes < 4) $scope.message = "Enjoy!";
         else $scope.message = "Too much!";
-        $scope.objColor = "green";
+        $scope.msgClass = "alert alert-success";
       }
     }
   }
